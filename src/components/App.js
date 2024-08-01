@@ -30,7 +30,7 @@ const App = () => {
     <div id="main">
       <form onSubmit={(event) => handleSubmit(event)}>
         {step === 1 && (
-          <>
+          <div id={"step" + { step }}>
             <div>
               <label for="firstName">First name</label>
               <input
@@ -60,10 +60,10 @@ const App = () => {
             <button type="button" onClick={() => handleNext(1)}>
               Next
             </button>
-          </>
+          </div>
         )}
         {step === 2 && (
-          <>
+          <div  id={"step" + { step }}>
             <div>
               <label for="make">Make</label>
               <input
@@ -95,7 +95,7 @@ const App = () => {
               Previous
             </button>
             <button type="submit">Submit</button>
-          </>
+          </div>
         )}
       </form>
     </div>
