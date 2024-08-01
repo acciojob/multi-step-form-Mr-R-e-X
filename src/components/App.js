@@ -29,15 +29,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    setStep(1);
-    setFormData({
-      first_name: "",
-      last_name: "",
-      model: "",
-      car_price: "",
-      card_info: "",
-      expiry_date: "",
-    });
+    // setStep(1);
   };
 
   return (

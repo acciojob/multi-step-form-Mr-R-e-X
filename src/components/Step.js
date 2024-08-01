@@ -9,7 +9,7 @@ const Step = ({
   handleSubmit,
 }) => {
   return (
-    <form onSubmit={step === 3 ? handleSubmit : nextStep}>
+    <form>
       {step === 1 && (
         <div id="step1">
           <div>
@@ -85,8 +85,16 @@ const Step = ({
             Previous
           </button>
         )}
-        {step < 3 && <button type="submit">Next</button>}
-        {step === 3 && <button type="submit">Submit</button>}
+        {step < 3 && (
+          <button type="button" onClick={nextStep}>
+            Next
+          </button>
+        )}
+        {step === 3 && (
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+        )}
       </div>
     </form>
   );
