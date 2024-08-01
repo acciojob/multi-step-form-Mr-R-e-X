@@ -1,17 +1,10 @@
 import React from "react";
 
-const Step = ({
-  step,
-  formData,
-  handleChange,
-  nextStep,
-  previousStep,
-  handleSubmit,
-}) => {
+const Step = ({ step, formData, handleChange, nextStep, previousStep, handleSubmit }) => {
   return (
     <form onSubmit={step === 3 ? handleSubmit : nextStep}>
       {step === 1 && (
-        <>
+        <div id="step1">
           <div>
             <label>First Name</label>
             <input
@@ -30,11 +23,11 @@ const Step = ({
               onChange={handleChange}
             />
           </div>
-        </>
+        </div>
       )}
 
       {step === 2 && (
-        <>
+        <div id="step2">
           <div>
             <label>Car Model</label>
             <input
@@ -53,11 +46,11 @@ const Step = ({
               onChange={handleChange}
             />
           </div>
-        </>
+        </div>
       )}
 
       {step === 3 && (
-        <>
+        <div id="step3">
           <div>
             <label>Card Information</label>
             <input
@@ -76,16 +69,12 @@ const Step = ({
               onChange={handleChange}
             />
           </div>
-        </>
+        </div>
       )}
 
       <div>
-        {step > 1 && (
-          <button type="button" onClick={previousStep}>
-            Previous
-          </button>
-        )}
-        {step < 3 && <button type="button">Next</button>}
+        {step > 1 && <button type="button" onClick={previousStep}>Previous</button>}
+        {step < 3 && <button type="submit">Next</button>}
         {step === 3 && <button type="submit">Submit</button>}
       </div>
     </form>
