@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./../styles/App.css";
 import Step from "./Step";
+
 const App = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -9,26 +9,26 @@ const App = () => {
     model: "",
     car_price: "",
     card_info: "",
-    expiry_date: "",
+    expiry_date: ""
   });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const nextStep = () => {
+  const nextStep = (e) => {
+    e.preventDefault();
     setStep(step + 1);
   };
 
-  const previousStep = () => {
+  const previousStep = (e) => {
+    e.preventDefault();
     setStep(step - 1);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Perform further submission actions, such as sending data to a server
+    console.log("Form submitted:", formData);
   };
 
   return (
