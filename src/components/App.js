@@ -9,7 +9,7 @@ const App = () => {
     model: "",
     car_price: "",
     card_info: "",
-    expiry_date: ""
+    expiry_date: "",
   });
 
   const nextStep = (e) => {
@@ -29,6 +29,15 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    setStep(1);
+    setFormData({
+      first_name: "",
+      last_name: "",
+      model: "",
+      car_price: "",
+      card_info: "",
+      expiry_date: "",
+    });
   };
 
   return (
