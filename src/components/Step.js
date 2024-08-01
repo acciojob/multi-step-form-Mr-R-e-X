@@ -1,6 +1,13 @@
 import React from "react";
 
-const Step = ({ step, formData, handleChange, nextStep, previousStep, handleSubmit }) => {
+const Step = ({
+  step,
+  formData,
+  handleChange,
+  nextStep,
+  previousStep,
+  handleSubmit,
+}) => {
   return (
     <form onSubmit={step === 3 ? handleSubmit : nextStep}>
       {step === 1 && (
@@ -73,7 +80,11 @@ const Step = ({ step, formData, handleChange, nextStep, previousStep, handleSubm
       )}
 
       <div>
-        {step > 1 && <button type="button" onClick={previousStep}>Previous</button>}
+        {step > 1 && (
+          <button type="button" onClick={previousStep}>
+            Previous
+          </button>
+        )}
         {step < 3 && <button type="submit">Next</button>}
         {step === 3 && <button type="submit">Submit</button>}
       </div>
